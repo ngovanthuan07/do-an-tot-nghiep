@@ -3,9 +3,12 @@
 namespace App\Providers;
 
 use App\Repositories\CategoryServiceRepository;
+use App\Repositories\EmployeeRepository;
+use App\Repositories\EmployeeWorkScheduleRepository;
 use App\Repositories\LocationRepository;
 use App\Repositories\SalonRepository;
 use App\Repositories\ServiceRepository;
+use App\Repositories\WorkScheduleRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,6 +35,18 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(ServiceRepository::class, function (Application $app) {
             return new ServiceRepository();
+        });
+
+        $this->app->bind(EmployeeRepository::class, function (Application $app) {
+            return new EmployeeRepository();
+        });
+
+        $this->app->bind(EmployeeWorkScheduleRepository::class, function (Application $app) {
+            return new EmployeeWorkScheduleRepository();
+        });
+
+        $this->app->bind(WorkScheduleRepository::class, function (Application $app) {
+            return new WorkScheduleRepository();
         });
     }
 

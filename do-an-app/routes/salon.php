@@ -5,7 +5,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SalonController;
 use App\Http\Controllers\Salon\AuthSalonController;
 use App\Http\Controllers\Salon\CategoryServiceController;
+use App\Http\Controllers\Salon\EmployeeController;
+use App\Http\Controllers\Salon\ProfileController;
 use App\Http\Controllers\Salon\ServiceController;
+use App\Http\Controllers\Salon\WorkScheduleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,6 +67,59 @@ Route::middleware(['salon.auth'])->prefix('salon')->group(function () {
     });
 
 
+    //employee
+    Route::prefix('employee')->group(function () {
+        //list
+        Route::get('/all', [EmployeeController::class, 'apiEmployeeAll'])->name('salon.employee.all');
+        Route::get('/displayEmployees', [EmployeeController::class, 'displayEmployees'])->name('salon.employee.displayEmployees');
+
+
+        //add
+        Route::get('/display-add', [EmployeeController::class, 'displayAdd'])->name('salon.employee.displayAdd');
+        Route::post('/validation-store', [EmployeeController::class, 'validateStore'])->name('salon.employee.validateStore');
+        Route::post('/store', [EmployeeController::class, 'store'])->name('salon.employee.store');
+
+
+        //update
+        Route::get('/display-update/{id}', [EmployeeController::class, 'displayUpdate'])->name('salon.employee.displayUpdate');
+        Route::post('/validation-update', [EmployeeController::class, 'validateUpdate'])->name('salon.employee.validateUpdate');
+        Route::post('/update', [EmployeeController::class, 'update'])->name('salon.employee.update');
+
+
+        // delete
+        Route::post('/delete', [EmployeeController::class, 'updateStatus'])->name('salon.employee.delete');
+
+        //work-schedule
+        Route::get('/work-schedule', [EmployeeController::class, 'workScheduleDisplay'])->name('salon.employee.work-schedule');
+        Route::get('/work-schedule-date', [EmployeeController::class, 'workScheduleGetByDate'])->name('salon.employee.work-schedule-date');
+        Route::post('/work-schedule-save', [EmployeeController::class, 'workScheduleSave'])->name('salon.employee.work-schedule-save');
+    });
+
+    Route::prefix('schedule')->group(function () {
+        Route::get('/work-schedule', [WorkScheduleController::class, 'workScheduleDisplaySalon'])->name('salon.schedule.work-schedule');
+        Route::get('/work-schedule-date', [WorkScheduleController::class, 'workScheduleGetByDate'])->name('salon.schedule.work-schedule-date');
+        Route::post('/work-schedule-save', [WorkScheduleController::class, 'workScheduleSalonSave'])->name('salon.schedule.work-schedule-save');
+
+    });
+
+    Route::prefix('profile')->group(function () {
+        // update profile
+        Route::get('/display-profile', [ProfileController::class, 'displayProfile'])->name('salon.profile.display-profile');
+        Route::post('/validate-update', [ProfileController::class, 'validateUpdate'])->name('salon.profile.validate-update');
+        Route::post('/update', [ProfileController::class, 'update'])->name('salon.profile.update');
+
+
+        //update images
+        Route::get('/salon-images', [ProfileController::class, 'loadSalonImage'])->name('salon.profile.salon-images');
+        Route::get('/display-images', [ProfileController::class, 'displayImages'])->name('salon.profile.display-images');
+        Route::post('/images-save', [ProfileController::class, 'imagesSave'])->name('salon.profile.images-save');
+
+        // time desc
+        Route::get('/time-desc', [ProfileController::class, 'timeDesc'])->name('salon.profile.time-desc');
+        Route::post('/validate-time-desc-update', [ProfileController::class, 'timeValidate'])->name('salon.profile.validate-time-desc-update');
+        Route::post('/time-desc-update', [ProfileController::class, 'timeDescUpdate'])->name('salon.profile.time-desc-update');
+
+    });
 
     Route::get('/logout', [AuthSalonController::class, 'logout'])->name('salon.logout');
 });

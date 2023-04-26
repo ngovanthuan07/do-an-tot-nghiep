@@ -87,8 +87,8 @@
                 </li>
                 {{-- Nhân viên --}}
                 <li class="nav-item menu-open">
-                    <a href="#" class="nav-link {{request()->is('salon/service*') ? 'active' : ''}}">
-                        <i class="nav-icon far fa-people-group"></i>
+                    <a href="#" class="nav-link {{request()->is('salon/employee*') ? 'active' : ''}}">
+                        <i class="nav-icon fa fa-people-group"></i>
                         <p>
                             Nhân viên
                             <i class="right fas fa-angle-left"></i>
@@ -96,21 +96,72 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('salon.service.displayServices')}}" class="nav-link {{request()->is('salon/service/displayServices') ? 'active' : ''}}">
+                            <a href="{{route('salon.employee.displayEmployees')}}" class="nav-link {{request()->is('salon/employee/displayEmployees') ? 'active' : ''}}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách dịch vụ</p>
+                                <p>Danh sách nhân viên</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('salon.service.displayAdd')}}" class="nav-link {{request()->is('salon/service/display-add') ? 'active' : ''}}">
+                            <a href="{{route('salon.employee.displayAdd')}}" class="nav-link {{request()->is('salon/employee/display-add') ? 'active' : ''}}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm dịch vụ</p>
+                                <p>Thêm nhân viên</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('salon.employee.work-schedule')}}" class="nav-link {{request()->is('salon/employee/work-schedule') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Khung giờ làm việc</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                {{-- Giờ làm việc --}}
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link {{request()->is('salon/schedule*') ? 'active' : ''}}">
+                        <i class="nav-icon far fa-clock"></i>
+                        <p>
+                            Giờ làm việc
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('salon.schedule.work-schedule')}}" class="nav-link {{request()->is('salon/schedule/work-schedule') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Giờ làm việc salon</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
 
+                {{-- Profile --}}
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link {{request()->is('salon/profile*') ? 'active' : ''}}">
+                        <i class="nav-icon far fa-address-card"></i>
+                        <p>
+                            Tài khoản
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('salon.profile.display-profile')}}" class="nav-link {{request()->is('salon/profile/display-profile') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cập nhật trang cá nhân</p>
+                            </a>
+                            <a href="{{route('salon.profile.display-images')}}" class="nav-link {{request()->is('salon/profile/display-images') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Chỉnh sửa ảnh salon</p>
+                            </a>
+                            <a href="{{route('salon.profile.time-desc')}}" class="nav-link {{request()->is('salon/profile/time-desc') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Miêu tả thời gian</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item menu-open">
                     <a href="{{route('salon.logout')}}" class="nav-link">
                         <i class="nav-icon fas fa-sign-out-alt"></i>

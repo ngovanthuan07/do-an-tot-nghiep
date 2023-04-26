@@ -63,4 +63,25 @@ class SalonRepository
        $salon = Salon::query()->where('salon_id', $salonId)->first();
        return $salon ?? null;
     }
+
+    public function saveImage($images, $idSalon) {
+        $salon = Salon::query()
+            ->where('salon_id', $idSalon)
+            ->first();
+        $salon->images = $images;
+
+        $salon->update();
+
+        return $salon;
+    }
+
+    public function updateTimeDesc($idSalon, $timeWorkDESC, $timeSlotDESC) {
+        $salon = Salon::query()
+            ->where('salon_id', $idSalon)
+            ->first();
+        $salon->time_working_desc = $timeWorkDESC;
+        $salon->time_slot_desc = $timeSlotDESC;
+        $salon->update();
+        return $salon;
+    }
 }
