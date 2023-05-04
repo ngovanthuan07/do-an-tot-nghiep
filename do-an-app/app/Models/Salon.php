@@ -34,4 +34,16 @@ class Salon extends Authenticatable
         'status',
         'ward_cod'
     ];
+
+    protected $hidden = [
+        'password',
+    ];
+
+    public function getImages() {
+        return json_decode($this->images);
+    }
+
+    public function setImages() {
+        return json_encode($this->images);
+    }
 }

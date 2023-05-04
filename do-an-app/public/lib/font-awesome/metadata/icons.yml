@@ -3920,7 +3920,7 @@ bomb:
     terms:
       - bomb
       - comic
-      - error
+      - alert
       - explode
       - fuse
       - grenade
@@ -5069,7 +5069,7 @@ bug:
   search:
     terms:
       - beetle
-      - error
+      - alert
       - glitch
       - insect
       - repair
@@ -8241,7 +8241,7 @@ circle-exclamation:
       - alert
       - damage
       - danger
-      - error
+      - alert
       - important
       - notice
       - notification
@@ -13141,7 +13141,7 @@ exclamation:
       - Exclamation Mark
       - alert
       - danger
-      - error
+      - alert
       - exclamation
       - important
       - mark
@@ -37318,7 +37318,7 @@ triangle-exclamation:
     terms:
       - alert
       - danger
-      - error
+      - alert
       - important
       - notice
       - notification
@@ -40987,7 +40987,7 @@ xmark:
       - close
       - cross
       - cross mark
-      - error
+      - alert
       - exit
       - incorrect
       - mark

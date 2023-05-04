@@ -1,0 +1,235 @@
+/* MuiGrid */
+.MuiGrid {
+    height: 177px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+.MuiGrid .MuiGridItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.MuiGrid .MuiGridItem .MuiGridItemImg {
+    width: 100px;
+    height: 100px;
+}
+/* recent me */
+.recentMe {
+    display: flex;
+    flex-direction: column;
+}
+.recentMe .sec-heading h6 {
+    font-family: 'allura';
+    font-size: 65px;
+}
+.recentMe .single-box {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.recentMe .info-area {
+    padding: 0 20px 45px;
+}
+.recentMe .img-area img {
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+    transition: all 0.5s ease;
+}
+
+.single-box:hover img {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.recentMe .info-area p {
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'San Francisco Text Medium';
+    overflow: hidden;
+    color: black;
+}
+.recentMe .info-area span {
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: #939598;
+}
+.recentMe .info-area a {
+    display: inline-block;
+    margin: 25px 0 0;
+    background-color: darkorange;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 4px
+}
+.recentMe .team-slider-recent owl-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -60px;
+    text-align: center;
+    width: 100%;
+}
+
+.recentMe .team-slider-recent button.owl-dots {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0 6px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #262626;
+}
+.recentMe .team-slider-recent button.owl-dots:active {
+    background-color: coral;
+}
+
+.recentMe .owl-prev,
+.recentMe .owl-next {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 30px !important;
+    height: 30px !important;
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 50% !important;
+    border: 1px solid #dddddd !important;
+    position: absolute;
+    top: 35%;
+}
+.recentMe .owl-prev {
+    left: -15px;
+}
+
+.recentMe .owl-next {
+    right: -15px;
+}
+
+/* san pham ban chay */
+.product-section .product-slider .single-box{
+    overflow: hidden;
+
+}
+.product-section .testimonial-box .img-area img {
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    height: 258px;
+    object-fit: contain;
+    border: 1px solid #eeeeee;
+    position: relative;
+    transition: all 0.5s ease;
+}
+.product-section .testimonial-box .img-area span {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 15px;
+    right: 8px;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background-color: black;
+    border-radius: 50%;
+
+}
+.product-section .testimonial-box .info-area .productBrand{
+    color: #939598;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+    font-weight: bold;
+}
+.product-section .testimonial-box .info-area .productName{
+    color: #222222;
+    font-family: San Francisco Text Medium;
+    height: 42px;
+    margin-bottom: 4px;
+    display: block;
+    font-weight: bold;
+}
+
+.product-section .testimonial-box .info-area .priceProceBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.product-section .testimonial-box .info-area .productPrice{
+    color: #E54D3E;
+    font-family: San Francisco Text Medium;
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+    font-weight: bold;
+}
+.product-section .testimonial-box .info-area .productPriceRemove{
+    margin-left: 10px;
+    color: #767676;
+    font-weight: bold;
+    font-size: 13px;
+    display: block;
+    text-decoration: line-through;
+}
+
+.product-section .testimonial-box .buyProduct {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #fc3;
+    cursor: pointer;
+}
+.product-section .testimonial-box .buyProduct a {
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.product-section .owl-prev,
+.product-section .owl-next {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 30px !important;
+    height: 30px !important;
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 50% !important;
+    border: 1px solid #dddddd !important;
+    position: absolute;
+    top: 35%;
+}
+.product-section .owl-prev {
+    left: -15px;
+}
+
+.product-section .owl-next {
+    right: -15px;
+}

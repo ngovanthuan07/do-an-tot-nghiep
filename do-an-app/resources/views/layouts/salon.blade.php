@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="{{ asset('lib/font-awesome/css/all.css') }}">
     <script src="{{ asset('lib/font-awesome/js/all.js') }}"></script>
 
+    <link rel="stylesheet" href="{{asset('css/load/manage-loading.css')}}">
 
     @stack('pushLink')
 
@@ -60,6 +61,7 @@
     <!-- Content Wrapper. Contains page content -->
 
     <div class="content-wrapper">
+        @include('layout-include.salon.loading')
         @yield('content')
     </div>
     <!-- /.content-wrapper -->
@@ -133,6 +135,11 @@
         headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
+    });
+    $(window).on('load', function() {
+        setTimeout(() => {
+            $('.loading-indicator-manage').hide();
+        }, 700)
     });
 </script>
 @stack('scripts')

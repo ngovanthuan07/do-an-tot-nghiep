@@ -11,7 +11,7 @@ class WorkSchedule extends Model
 
     protected $primaryKey = 'ws_id';
 
-    protected $table = 'wokingschedule';
+    protected $table = 'workingschedule';
 
     public $timestamps = false;
 

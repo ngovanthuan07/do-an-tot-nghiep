@@ -33,9 +33,9 @@ return [
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
-    | When your application is in debug mode, detailed error messages with
-    | stack traces will be shown on every error that occurs within your
-    | application. If disabled, a simple generic error page is shown.
+    | When your application is in debug mode, detailed alert messages with
+    | stack traces will be shown on every alert that occurs within your
+    | application. If disabled, a simple generic alert page is shown.
     |
     */
 
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Ho_Chi_Minh',
 
     /*
     |--------------------------------------------------------------------------
@@ -231,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'ImageHelper' => App\Helpers\ImageHelper::class,
         'MyIDHelper' => App\Helpers\MyIDHelper::class,
+        'HandleDateTimePickerHelper' => App\Helpers\HandleDateTimePickerHelper::class,
     ],
 
 ];

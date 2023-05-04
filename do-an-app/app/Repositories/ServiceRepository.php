@@ -44,6 +44,15 @@ class ServiceRepository
         return $service;
     }
 
+    public function getServiceByCategoryServiceIDAndSalonID($cseID, $idSalon) {
+        $services = Service::query()
+            ->where('cse_id', $cseID)
+            ->where('salon_id', $idSalon)
+            ->where('status', 'ON')
+            ->get();
+        return $services;
+    }
+
     public function update($request, $idSalon) {
         $service = Service::query()
             ->where('service_id', $request->service_id)

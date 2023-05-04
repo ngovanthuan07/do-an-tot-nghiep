@@ -19,7 +19,7 @@ class AuthAdminController extends Controller
 
         if (!Auth::guard('admin')->attempt($credentials)) {
             return redirect()
-                ->route('admin.admin.displayAdminLogin')
+                ->route('admin.displayAdminLogin')
                 ->with('alertError', 'Thông tin đăng nhập không chính xác');
         }
 

@@ -1,0 +1,42 @@
+/*@media (min-width: 300px) and (max-width: 576px) {*/
+/*   .salon-info .time-work {*/
+/*       width: 70%;*/
+/*   }*/
+/*    .employee-container {*/
+/*        display: flex;*/
+/*        flex-direction: row;*/
+/*        justify-content: center;*/
+/*        flex-wrap: wrap;*/
+/*        width: 100%;*/
+/*        height: 400px;*/
+/*        overflow-x: scroll;*/
+/*        white-space: nowrap;*/
+/*    }*/
+/*    .employee-container .employee-item{*/
+/*        width: 70%;*/
+/*        height: auto;*/
+/*        margin: 5px;*/
+/*        border-radius: 10px;*/
+/*    }*/
+/*}*/
+/*@media (min-width: 576px) and (max-width: 768px) {*/
+/*    .salon-info .time-work {*/
+/*        width: 70%;*/
+/*    }*/
+/*    .employee-container {*/
+/*        display: flex;*/
+/*        flex-direction: row;*/
+/*        justify-content: center;*/
+/*        flex-wrap: wrap;*/
+/*        width: 100%;*/
+/*        overflow-x: auto;*/
+/*        overflow-y: inherit;*/
+/*        white-space: nowrap;*/
+/*    }*/
+/*    .employee-container .employee-item{*/
+/*        width: 70%;*/
+/*        height: auto;*/
+/*        margin: 5px;*/
+/*        border-radius: 10px;*/
+/*    }*/
+/*}*/

@@ -1,0 +1,304 @@
+/* header */
+.searchHeader {
+    width: 100%;
+    height: 30px;
+    background-color: #FFCC33;
+}
+/* MuiGrid */
+.MuiGrid {
+    height: 177px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+.MuiGrid .MuiGridItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.MuiGrid .MuiGridItem .MuiGridItemImg {
+    width: 100px;
+    height: 100px;
+}
+/* info */
+.salon-info {
+    padding-bottom: 10px;
+}
+.salon-info .salon-info-name p {
+    font-size: 2rem;
+    font-family: San Francisco Text, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.salon-info .location .location-address {
+    color: #808285;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.salon-info .location-address-detail a{
+    color: hsl(45deg 100% 60%);
+    text-decoration: none;
+}
+.salon-info .time-work {
+    width: 25%;
+    padding: 15px 10px 15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid hsl(45deg 100% 60%);
+    border-radius: 1em;
+}
+.salon-info .time-work span {
+    font-size: 14px;
+}
+.salon-info .intro {
+    margin-top: 10px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*service*/
+.category-service-container .service-title{
+    border-bottom: 1px solid #D9D9D9;
+}
+.category-service-menu  {
+    width: 100%;
+
+}
+.category-service-container .category-service-title  {
+    height: 50px;
+}
+.category-service-container .category-service-title .title-item {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.button-category-service-value{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid hsl(45deg 100% 60%);
+    padding: 0.5em 1em;
+    border-radius: 3em;
+    color: hsl(45deg 100% 60%);
+    outline: none !important;
+    background-color: transparent;
+    cursor: pointer;
+}
+.button-category-service-value.active{
+    background-color: hsl(45deg 100% 60%);
+    color: white;
+}
+
+.services-container {
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+}
+.services-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.services-container::-webkit-scrollbar-thumb {
+    background-color: #e1e1e9;
+    border-radius: 5px;
+}
+
+.services-container::-webkit-scrollbar-thumb:hover {
+    background-color: #e1e1e9;
+}
+
+.service-item {
+    width: 25%;
+    padding: 20px 8px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.service-item img{
+    width: 100%;
+    height: auto;
+}
+.service-item .service-name, .service-price{
+    width: 100%;
+    font-size: 14px;
+    color: #111;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+}
+.service-item .service-description {
+    width: 100%;
+    font-size: 13px;
+    color: #5f5f5f;
+    white-space: pre-line;
+    font-weight: 300;
+}
+.service-item .service-select {
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    padding: 7px 0px;
+    border-radius: 6px;
+    color: black;
+    font-weight: bold;
+    outline: none !important;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.service-item .service-select.active {
+    border: 1px solid hsl(45deg 100% 60%);
+    background-color: hsl(45deg 100% 60%);
+}
+
+.services-container-empty {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fec54f;
+}
+/* working-date */
+
+.working-date-item-1 {
+    width: 100%;
+    height: 315px;
+}
+
+.working-date-item-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.working-date-item-2 .button-working-date-value{
+    margin: 10px 0px 10px 0px;
+    padding: 3px 16px;
+    background-color: transparent;
+    border: 1px solid #FFCC33FF;
+    border-radius: 6px;
+    font-weight: 500;
+    outline: none;
+}
+.working-date-item-2 .button-working-date-value.active {
+    background-color: #FFCC33FF;
+    color: white;
+}
+/* employee */
+.employee-container {
+    display: flex;
+    width: 100%;
+    max-height: 500px;
+    overflow-x: auto;
+}
+.employee-container::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.employee-container::-webkit-scrollbar-thumb {
+    background-color: #e1e1e9;
+    border-radius: 5px;
+}
+
+.employee-container::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.employee-container .employee-item{
+    min-width: 250px;
+    margin: 5px;
+    height: auto;
+    border-radius: 10px;
+}
+.employee-container .employee-item img{
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background-color: #e1e1e9;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+.employee-container .employee-item .employee-name{
+    width: 100%;
+    font-size: 14px;
+    color: #111;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.employee-container .employee-item .employee-description{
+    width: 100%;
+    font-size: 13px;
+    color: #5f5f5f;
+    white-space: pre-line;
+    font-weight: 300;
+}
+.employee-container-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.employee-container .employee-item .button-employee-value {
+    width: 80%;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+.employee-container .employee-item .button-employee-value.active {
+    background-color: #2bf360;
+    color: white;
+    border: 1px solid #2bf360;
+
+}
+/*service*/
+.cart-service-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-service-icon, .cart-service-desc {
+    padding-top: 4px
+}
+.cart-service-price {
+    padding: 4px 17px;
+    background-color: #ffcc33;
+    border-radius: 10px;
+    color: white;
+}
+.cart-service-right-button {
+    padding: 5px 20px;
+    background-color: #fc3;
+    color: #fff;
+    border: 1px solid #ffcc33;
+    border-radius: 10px;
+    outline: none !important;
+    cursor: pointer;
+}

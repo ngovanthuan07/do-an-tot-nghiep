@@ -50,6 +50,11 @@ return [
             'driver' => 'session',
             'provider' => 'salons',
         ],
+
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customers',
+        ],
     ],
 
     /*
@@ -83,6 +88,11 @@ return [
         'salons' => [
             'driver' => 'eloquent',
             'model' => \App\Models\Salon::class,
+        ],
+
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Customer::class,
         ],
 
         // 'users' => [
@@ -123,6 +133,13 @@ return [
 
         'salons' => [
             'provider' => 'salons',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'customers' => [
+            'provider' => 'customers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
