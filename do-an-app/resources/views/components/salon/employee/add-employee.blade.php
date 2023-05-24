@@ -1,5 +1,5 @@
 @extends('layouts.salon')
-@section('title', 'salon add')
+@section('title', 'Thêm nhân viên')
 @section('content')
     <div id="contentApp">
         <div class="content-header">
@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <form id="myForm">
-                            <input type="hidden" id="status" name="status" value="ON" id="status">
+                            <input type="hidden" id="status" name="status" value="active" id="status">
                             <div class="card">
                                 <!-- /.card-header -->
                                 <div class="card-body">

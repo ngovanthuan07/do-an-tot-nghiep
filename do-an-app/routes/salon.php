@@ -3,11 +3,14 @@
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SalonController;
+use App\Http\Controllers\salon\AppointmentController;
 use App\Http\Controllers\Salon\AuthSalonController;
 use App\Http\Controllers\Salon\CategoryServiceController;
+use App\Http\Controllers\Salon\CommentController;
 use App\Http\Controllers\Salon\EmployeeController;
 use App\Http\Controllers\Salon\ProfileController;
 use App\Http\Controllers\Salon\ServiceController;
+use App\Http\Controllers\Salon\StatisticalController;
 use App\Http\Controllers\Salon\WorkScheduleController;
 use Illuminate\Support\Facades\Route;
 
@@ -102,6 +105,17 @@ Route::middleware(['salon.auth'])->prefix('salon')->group(function () {
 
     });
 
+    // appointment
+    Route::prefix('appointment')->group(function () {
+        Route::get('/cuoc-hen-chua-xac-nhan', [AppointmentController::class, 'scheduled'])->name('salon.appointment.lSchedule');
+        Route::get('/da-xac-nhan', [AppointmentController::class, 'confirmed'])->name('salon.appointment.lConfirmed');
+        Route::get('/da-hoan-thanh', [AppointmentController::class, 'completed'])->name('salon.appointment.lCompleted');
+        Route::get('/da-huy', [AppointmentController::class, 'cancel'])->name('salon.appointment.lCancel');
+        Route::get('/list-appointment-by-status', [AppointmentController::class, 'loadAppointmentByStatus'])->name('salon.appointment.loadAppointmentByStatus');
+        Route::get('/chi-tiet-cuoc-hen/{appointment_id}', [AppointmentController::class, 'detailAppointment'])->name('salon.appointment.detailAppointment');
+        Route::post('/chi-tiet-cuoc-hen/cap-nhat-trang-thai', [AppointmentController::class, 'updateStatus'])->name('salon.appointment.updateStatus');
+    });
+
     Route::prefix('profile')->group(function () {
         // update profile
         Route::get('/display-profile', [ProfileController::class, 'displayProfile'])->name('salon.profile.display-profile');
@@ -118,6 +132,18 @@ Route::middleware(['salon.auth'])->prefix('salon')->group(function () {
         Route::get('/time-desc', [ProfileController::class, 'timeDesc'])->name('salon.profile.time-desc');
         Route::post('/validate-time-desc-update', [ProfileController::class, 'timeValidate'])->name('salon.profile.validate-time-desc-update');
         Route::post('/time-desc-update', [ProfileController::class, 'timeDescUpdate'])->name('salon.profile.time-desc-update');
+
+    });
+
+    Route::prefix('comment')->group(function () {
+        Route::get('/danh-sach-binh-luan', [CommentController::class, 'lComment'])->name('salon.comment.lComment');
+        Route::get('/binh-luan-api', [CommentController::class, 'commentApi'])->name('salon.comment.commentApi');
+        Route::get('/xoa-binh-luan/{comment_id}', [CommentController::class, 'commentDelete'])->name('salon.comment.delete');
+    });
+
+    Route::prefix('statistic')->group(function () {
+        Route::get('/top_nhan_vien', [StatisticalController::class, 'top_nhan_vien'])->name('salon.statistic.top_nhan_vien');
+        Route::get('/top_nhan_vien_api', [StatisticalController::class, 'top_nhan_vien_api'])->name('salon.statistic.top_nhan_vien_api');
 
     });
 

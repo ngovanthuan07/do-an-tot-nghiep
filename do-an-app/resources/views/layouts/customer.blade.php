@@ -47,7 +47,7 @@
     @if(session('auth'))
         setTimeout(() => {
             loginForm();
-        }, 1000)
+        }, 200)
     @endif
 
     $('#btnLogin').on('click', function (event) {

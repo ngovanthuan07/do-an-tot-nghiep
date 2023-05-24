@@ -1,17 +1,17 @@
 @extends('layouts.salon')
-@section('title', 'Tài khoản')
+@section('title', 'Miêu tả thời gian làm việc của salon')
 @section('content')
     <div id="contentApp">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Miêu tả thời gian làm việc của showp</h1>
+                        <h1 class="m-0">Miêu tả thời gian làm việc của salon</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Miêu tả thời gian</a></li>
-                            <li class="breadcrumb-item active">Miêu tả thời gian</li>
+                            <li class="breadcrumb-item"><a href="#">Tài khoản</a></li>
+                            <li class="breadcrumb-item active">Miêu tả thời gian làm việc của salon</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

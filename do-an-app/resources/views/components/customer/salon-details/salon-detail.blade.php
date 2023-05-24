@@ -17,14 +17,27 @@
     <!-- carousel -->
     <div class="container">
         <div class="owl-carousel owl-theme">
-            @foreach($salon->images as $index=>$image)
-                <div class="item">
-                    <img
-                        src="{{asset('media/salon/'.$image->src)}}"
-                        alt="{{$salon->name . '-' . $index}}"
-                    >
-                </div>
-            @endforeach
+            @if($salon->images != null && $salon->images != '')
+                @foreach($salon->images as $index=>$image)
+                    <div class="item">
+                        <img
+                            src="{{asset('media/salon/'.$image->src)}}"
+                            alt="{{$salon->name . '-' . $index}}"
+                        >
+                    </div>
+                @endforeach
+
+            @else
+                @for($i = 1; $i <= 10; $i++)
+                    <div class="item">
+                        <img
+                            src="{{asset('media/empty/salon/' . $i . '.jpg')}}"
+                            alt="{{'empty-img-' . $i}}"
+                        >
+                    </div>
+                @endfor
+            @endif
+
         </div>
     </div>
     <div class="container">
@@ -97,9 +110,7 @@
         </div>
     </div>
 
-    <div>
-        Oke
-    </div>
+    @include('components.customer.salon-details.comment')
 
     @include('widgets.modal.create-service-choose-modal')
 

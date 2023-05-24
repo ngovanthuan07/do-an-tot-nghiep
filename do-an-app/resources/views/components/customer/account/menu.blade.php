@@ -11,15 +11,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('customer.appointment')}}">
                     <i class="far fa-calendar-alt"></i> Lịch hẹn
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-shopping-cart"></i> Đơn hàng
-                </a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="#">--}}
+{{--                    <i class="fas fa-shopping-cart"></i> Đơn hàng--}}
+{{--                </a>--}}
+{{--            </li>--}}
         </ul>
     </div>
 </nav>

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
+use App\Models\Customer;
 use App\Repositories\CategoryServiceRepository;
 use App\Repositories\LocationRepository;
 use App\Repositories\SalonRepository;
 use App\Repositories\ServiceRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SalonDetailController extends Controller
 {
@@ -57,18 +60,29 @@ class SalonDetailController extends Controller
         $services = $this->serviceRepository
             ->getAllServiceBySalonId($salon->salon_id);
 
-        return view('components.customer.salon-details.salon-detail', compact('salon', 'services'));
+        $comments = Comment::where('salon_id', $salon->salon_id)->get();
+        foreach ($comments as $comment) {
+            $comment['customer'] = Customer::where('customer_id', $comment->customer_id)->first();
+        }
+
+        $resultStar = DB::select('CALL GetTotalStarBySalonID(?)', [$salon->salon_id]);
+
+        $stars = $resultStar[0]->average_stars ?? 0;
+
+        return view('components.customer.salon-details.salon-detail', compact('salon', 'services', 'comments', 'stars'));
     }
 
     public function getServiceByCategoryServiceIDAndSalonID(Request $request)
     {
-        return $this->serviceRepository
-            ->getServiceByCategoryServiceIDAndSalonID($request['cse_id'],$request['salon_id']);
+        return DB::select('CALL GetServicesByCseIdAndSalonId(?, ?)', [$request['cse_id'],$request['salon_id']]);
+//        return $this->serviceRepository
+//            ->getServiceByCategoryServiceIDAndSalonID($request['cse_id'],$request['salon_id']);
     }
 
     public function getServiceBySalonID(Request $request)
     {
-        return $this->serviceRepository
-            ->getAllServiceBySalonId($request['salon_id']);
+        return DB::select('CALL GetServicesBySalonId(?)', [$request['salon_id']]);
+//        return $this->serviceRepository
+//            ->getAllServiceBySalonId($request['salon_id']);
     }
 }

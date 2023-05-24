@@ -13,7 +13,7 @@ class CategoryServiceRepository
         $categoryService->name = $request->input('name');
         $categoryService->salon_id = Auth::guard('salon')->user()->salon_id;
         $categoryService->isSelect = $request->input('isSelect');
-        $categoryService->status = 'ON';
+        $categoryService->status = 'active';
         $categoryService->save();
         return $categoryService ? true : false;
     }
@@ -23,7 +23,7 @@ class CategoryServiceRepository
         $categoryService->name = $request->input('name');
         $categoryService->isSelect = $request->input('isSelect');
         $categoryService->salon_id = Auth::guard('salon')->user()->salon_id;
-        $categoryService->status = 'ON';
+        $categoryService->status = 'active';
         $categoryService->update();
     }
 
@@ -36,6 +36,6 @@ class CategoryServiceRepository
     public function getAllCategoryServiceBySalonId($id) {
         return CategoryService::query()
             ->where('salon_id', $id)
-            ->where('status', 'ON')->get();
+            ->where('status', 'active')->get();
     }
 }

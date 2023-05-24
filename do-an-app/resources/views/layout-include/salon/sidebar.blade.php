@@ -135,7 +135,61 @@
                     </ul>
                 </li>
 
+                {{-- Cuộc hẹn --}}
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link {{request()->is('salon/appointment*') ? 'active' : ''}}">
+                        <i class="fa-solid fas fa-calendar"></i>
+                        <p>
+                            Cuộc hẹn
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('salon.appointment.lSchedule')}}" class="nav-link {{request()->is('salon/appointment/cuoc-hen-chua-xac-nhan') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cuộc hẹn chưa xác nhận</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('salon.appointment.lConfirmed')}}" class="nav-link {{request()->is('salon/appointment/da-xac-nhan') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cuộc hẹn đã xác nhận</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('salon.appointment.lCompleted')}}" class="nav-link {{request()->is('salon/appointment/da-hoan-thanh') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cuộc hẹn đã hoàn thành</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('salon.appointment.lCancel')}}" class="nav-link {{request()->is('salon/appointment/da-huy') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cuộc hẹn đã hủy</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
+                {{-- Comment --}}
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link {{request()->is('salon/comment*') ? 'active' : ''}}">
+                        <i class="fa-solid fas fa-comments"></i>
+                        <p>
+                            Bình luận
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('salon.comment.lComment')}}" class="nav-link {{request()->is('salon/comment/danh-sach-binh-luan') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách bình luận</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 {{-- Profile --}}
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link {{request()->is('salon/profile*') ? 'active' : ''}}">

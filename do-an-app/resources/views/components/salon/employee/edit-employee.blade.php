@@ -1,17 +1,17 @@
 @extends('layouts.salon')
-@section('title', 'salon add')
+@section('title', 'Cập nhật nhân viên')
 @section('content')
     <div id="contentApp">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Thêm nhân viên</h1>
+                        <h1 class="m-0">Cập nhật nhân viên</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Nhân viên</a></li>
-                            <li class="breadcrumb-item active">Thêm nhân viên</li>
+                            <li class="breadcrumb-item active">Cập nhật nhân viên</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -24,7 +24,7 @@
                     <div class="col-md-12">
                         <form id="myForm">
                             <input type="hidden" id="employee_id" name="employee_id" value="{{$employee->employee_id}}">
-                            <input type="hidden" id="status" name="status" value="ON">
+                            <input type="hidden" id="status" name="status" value="active">
                             <div class="card">
                                 <!-- /.card-header -->
                                 <div class="card-body">

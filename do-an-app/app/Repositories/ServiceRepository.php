@@ -18,7 +18,7 @@ class ServiceRepository
         $service->price = $request->input('price');
         $service->description = $request->input('description');
         $service->image = ImageHelper::saveImage('service', $request->file('file'));
-        $service->status = 'ON';
+        $service->status = 'active';
         $service->cse_id = $request->input('cse_id');
         $service->salon_id = Auth::guard('salon')->user()->salon_id;
         $service->save();
@@ -30,7 +30,7 @@ class ServiceRepository
             ->join('categoryservice', 'service.cse_id', '=', 'categoryservice.cse_id')
             ->join('salon', 'salon.salon_id', '=', 'service.salon_id')
             ->select('service.*', 'categoryservice.name as category_service_name')
-            ->where('service.status', 'ON')
+            ->where('service.status', 'active')
             ->where('service.salon_id', $salonId)
             ->get();
         ;
@@ -48,7 +48,7 @@ class ServiceRepository
         $services = Service::query()
             ->where('cse_id', $cseID)
             ->where('salon_id', $idSalon)
-            ->where('status', 'ON')
+            ->where('status', 'active')
             ->get();
         return $services;
     }

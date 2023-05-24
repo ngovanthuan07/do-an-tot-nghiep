@@ -1,5 +1,5 @@
 @extends('layouts.customer')
-@section('title', 'Chi tiết salon')
+@section('title', 'Thanh toán')
 @push('pushLink')
     <link rel="stylesheet" href="{{asset('lib/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/load/a-ball-pulse-sync.css')}}">
@@ -33,8 +33,8 @@
                                 <form class="pb-3">
                                     <div class="d-flex flex-row pb-3">
                                         <div class="d-flex align-items-center pe-2">
-                                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1"
-                                                   value="" aria-label="..." checked />
+                                            <input class="form-check-input" type="radio" name="type_payment" value="momo" id="radioNoLabel1"
+                                                   value="" aria-label="..."  />
                                         </div>
                                         <div class="rounded border d-flex w-100 p-3 align-items-center">
                                             <p class="mb-0">
@@ -44,23 +44,23 @@
                                         </div>
                                     </div>
 
-                                    <div class="d-flex flex-row pb-3">
-                                        <div class="d-flex align-items-center pe-2">
-                                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel2"
-                                                   value="" aria-label="..." />
-                                        </div>
-                                        <div class="rounded border d-flex w-100 p-3 align-items-center">
-                                            <p class="mb-0">
-                                                <img src="{{asset('media/logo/vnpay.png')}}" class="img-fluid"  alt="vnpay">
-                                                Thanh toán bằng VNPAY
-                                            </p>
-                                        </div>
-                                    </div>
+{{--                                    <div class="d-flex flex-row pb-3">--}}
+{{--                                        <div class="d-flex align-items-center pe-2">--}}
+{{--                                            <input class="form-check-input" type="radio" name="type_payment" value="vnpay" id="radioNoLabel2"--}}
+{{--                                                   value="" aria-label="..." />--}}
+{{--                                        </div>--}}
+{{--                                        <div class="rounded border d-flex w-100 p-3 align-items-center">--}}
+{{--                                            <p class="mb-0">--}}
+{{--                                                <img src="{{asset('media/logo/vnpay.png')}}" class="img-fluid"  alt="vnpay">--}}
+{{--                                                Thanh toán bằng VNPAY--}}
+{{--                                            </p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
 
                                     <div class="d-flex flex-row">
                                         <div class="d-flex align-items-center pe-2">
-                                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel3"
-                                                   value="" aria-label="..." />
+                                            <input class="form-check-input" type="radio" name="type_payment" value="tien_mat" id="radioNoLabel3"
+                                                   value="" aria-label="..." checked/>
                                         </div>
                                         <div class="rounded border d-flex w-100 p-3 align-items-center">
                                             <p class="mb-0">
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <input type="button" value="Tiến hành thanh toán" class="btn btn-warning btn-block btn-lg text-white"/>
+                                <input id="btnCheckout" type="button" value="Đặt lịch hẹn" class="btn btn-warning btn-block btn-lg text-white"/>
                             </div>
                         </div>
 
@@ -115,7 +115,7 @@
                                     @endforeach
                                     <div class="p-2 d-flex pt-3">
                                         <div class="col-8"><b>Tổng tiền</b></div>
-                                        <div class="ms-auto"><b class="text-warning">{{$order['total_price']}}</b></div>
+                                        <div class="ms-auto"><b class="text-warning">{{$order['total_price']}} VNĐ</b></div>
                                     </div>
                             </div>
                         </div>
@@ -130,5 +130,46 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="{{asset('lib/momentjs/moment.js')}}"></script>
     <script type="module">
+        $('#btnCheckout').on('click', function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: '{{route('customer.payment.book.redirect_url_payment')}}',
+                type: 'POST',
+                success: function (resp) {
+                    if(resp.success) {
+                        let typePayment = $("input[name='type_payment']:checked").val();
+                        let phone = $("input[name='phone']").val();
+                        window.location.href = `/dat-lich/thanh-toan/${typePayment}?phone=${phone}`;
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Lỗi',
+                            text: 'Lỗi hệ thống',
+                            confirmButtonColor: "#fdc63c",
+                        })
+                        window.location.href = "{{url()->previous()}}";
+                    }
+                },
+                error: function (err) {
+                    let message = error?.responseJSON?.message;
+                    if(message) {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Lưu ý',
+                            text: message,
+                            confirmButtonColor: "#fdc63c",
+                        })
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Lỗi',
+                            text: 'Lỗi hệ thống',
+                            confirmButtonColor: "#fdc63c",
+                        })
+                    }
+                    window.location.href = "{{url()->previous()}}";
+                }
+            })
+        })
     </script>
 @endpush

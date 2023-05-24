@@ -20,7 +20,7 @@ class EmployeeWorkScheduleRepository
             ->join('employees as e', 'wls.employee_id', '=', 'e.employee_id')
             ->where('wls.work_date', '=', $wordDate)
             ->where('e.salon_id', '=', $salonID)
-            ->where('e.status', '=', 'ON')
+            ->where('e.status', '=', 'active')
             ->get();
     }
 

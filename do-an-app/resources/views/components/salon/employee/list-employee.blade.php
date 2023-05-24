@@ -1,5 +1,5 @@
 @extends('layouts.salon')
-@section('title', 'admin list salon')
+@section('title', 'Danh sách nhân viên')
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -134,7 +134,7 @@
             type: 'POST',
             data: {
                 'employee_id': deleteId,
-                'status': 'OFF'
+                'status': 'inactive'
             },
             success: function (response) {
                 console.log(response)

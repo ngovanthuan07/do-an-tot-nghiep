@@ -9,6 +9,13 @@ class Appointment extends Model
 {
     use HasFactory;
 
+    public static  $SCHEDULED = 'scheduled';
+    public static  $CONFIRMED = 'confirmed';
+    public static  $COMPLETED = 'completed';
+    public static  $CANCEL = 'cancel';
+    public static  $REJECT = 'reject';
+
+
     protected $table = 'appointment';
 
     protected $primaryKey = 'appointment_id';

@@ -18,15 +18,12 @@
                 <a class="nav-link {{request()->is('/*') ? 'active' : ''}}" href="{{route('customer.home')}}">Trang chủ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{request()->is('lam-dep*') ? 'active' : ''}}" href="#">Salon </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{request()->is('san-pham*') ? 'active' : ''}}" href="#">Sản phẩm</a>
+                <a class="nav-link {{request()->is('lam-dep*') ? 'active' : ''}}" href="{{route('customer.salon.search_view')}}">Salon </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link {{request()->is('tin-tuc*') ? 'active' : ''}}" href="#">Tin tức</a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link {{request()->is('tin-tuc*') ? 'active' : ''}}" href="#">Tin tức</a>--}}
+{{--            </li>--}}
         </ul>
 
         <ul class="navbar-nav salonBarRight my-2 my-lg-0">

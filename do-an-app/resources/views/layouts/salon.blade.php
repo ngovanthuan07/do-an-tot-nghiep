@@ -139,7 +139,7 @@
     $(window).on('load', function() {
         setTimeout(() => {
             $('.loading-indicator-manage').hide();
-        }, 700)
+        }, 300)
     });
 </script>
 @stack('scripts')

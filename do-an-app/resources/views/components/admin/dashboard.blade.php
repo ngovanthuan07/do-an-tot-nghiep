@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'admin-dashboard')
+@section('title', '...')
 @section('content')
     <h1 class="text-center">Hello World!!!</h1>
 @endsection

@@ -64,6 +64,48 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link {{request()->is('admin/posts*') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Bài viết
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route("admin.posts.index")}}" class="nav-link {{request()->is('admin/posts') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách bài viết</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route("admin.posts.showAdd")}}" class="nav-link {{request()->is('admin/posts/them-bai-viet') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm bài viết</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link {{request()->is('admin/settings*') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Cài đặt
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('admin.outstanding.index')}}" class="nav-link {{request()->is('admin/settings/outstanding') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Salon nổi bật</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item menu-open">
                     <a href="{{route('admin.logout')}}" class="nav-link">
                         <i class="nav-icon fas fa-sign-out-alt"></i>

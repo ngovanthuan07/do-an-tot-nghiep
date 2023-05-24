@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+/* header */
+.salonBar .salonBarLeft{
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.salonBar .salonBarLeft .nav-link {
+    margin-right: 10px;
+    color: #DDDDDD !important;
+    padding: 5px 15px 5px 15px !important;
+    border:  1px solid #DDDDDD !important;
+    border-radius: 5px !important;
+    background-color: white !important;
+    transition: 0.3s;
+}
+.salonBar .salonBarLeft .active {
+    color: black !important;
+    border:  1px solid #FFCC33 !important;
+    background-color: #FFCC33 !important;
+}
+
+
+.salonBar .salonBarRight {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.salonBar .salonBarLeft .nav-link:hover {
+    color: black !important;
+    border:  1px solid #FFCC33 !important;
+    background-color: #FFCC33 !important;
+}
+
+/* header */
+.searchHeader {
+    width: 100%;
+    height: 30px;
+    background-color: #FFCC33;
+}
+/* search */
+.titleFilter {
+    padding: 10px 0 10px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.titleFilter span {
+    font-size: 16px;
+    font-weight: bold;
+}
+/* search name */
+.findNameSalon {
+    margin: 10px 10px 10px 10px;
+}
+.findNameSalon .searchFieldTitle {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+.detailFindNameSalon {
+    width: 95%;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+
+}
+.detailFindNameSalon .iconDetailFindNameSalon {
+    color: #FFCC33;
+}
+.detailFindNameSalon input, .detailFindNameSalon select{
+    padding-left: 10px;
+    width: 100%;
+    border: none;
+    background-color: #f2f2f2;
+    font-size: 13px;
+
+}
+.detailFindNameSalon input:focus, .detailFindNameSalon select:focus{
+    outline:0;
+}
+.detailFindNameSalon input::placeholder, .detailFindNameSalon select::placeholder {
+    color: #DDDDDD;
+    font-size: 13px;
+}
+
+/* star */
+.findStar {
+    margin: 10px 10px 10px 10px;
+}
+.con {
+    margin: 5px 0;
+    height: 60px
+}
+.con .fa-star {
+    font-size: 25px;
+}
+.boxBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+/* button */
+.buttonSearch {
+    width: 85%;
+    padding: 4px 16px;
+    font-size: 18px;
+    border-radius: 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    background-color: #FFCC33;
+}
+/* content */
+/* .bd-content {
+    margin-right: 20px;
+} */
+/* result*/
+.result-find {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    margin-bottom: 10px;
+}
+
+/* list salon */
+.list-item-salon {
+    width: 100%;
+}
+
+/** location **/
+.location-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+.location-salon {
+    color: #FFCC33;
+    font-size: 16px;
+}
+.location-text {
+    color: #808285;
+    cursor: pointer;
+    font-size: 12px;
+}
+.item-salon {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: row;
+}
+.salon-img {
+    width: 40%;
+}
+.item-salon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.salon-content {
+    margin-left: 10px;
+    flex: 2;
+}
+
+
+.salon-title-name {
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor:pointer;
+
+}
+
+
+.salon-title-name:hover {
+    color: #FFCC33;
+}
+
+.salon-title-address-location {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+
+.salon-title-address-location i, .salon-title-address-location span {
+    display: inline-block;
+    font-size: 13px;
+    color: #939598;
+
+}
+.salon-title-address-location span {
+    width: 75%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    padding-left: 4px;
+
+}
+.salon-service {
+    height: 50%;
+}
+.view-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+.view-detail a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    cursor:pointer;
+}
+.view-detail a:hover {
+    color: #FFCC33;
+}
+
+
+
+.mutiSalonBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.mutiSalonBtn button {
+    background-color: #FFCC33;
+    padding: 10px 20px 10px 20px;
+}
+.mutiSalonBtn button span {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 400px) {
+    .item-salon img{
+        width: 100px;
+        object-fit: cover;
+    }
+    .salon-title-address-location span {
+        width: 120px;
+    }
+    .location-text {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .item-salon img{
+        width: 200px;
+        object-fit: cover;
+    }
+    .salon-title-address-location span {
+        width: 250px;
+    }
+    .location-text {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .salon-service {
+        height: 20%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .salon-service {
+        height: 30%;
+    }
+}

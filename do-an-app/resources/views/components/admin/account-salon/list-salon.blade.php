@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'admin list salon')
+@section('title', 'Danh sách tài khoản salon')
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -115,7 +115,7 @@
             type: 'POST',
             data: {
                 'salonId': blockId,
-                'status': 'BLOCK'
+                'status': 'block'
             },
             success: function (response) {
                 console.log(response)

@@ -17,7 +17,7 @@ class SalonRepository
         $salon->address = $request->input('address');
         $salon->description = $request->input('description');
         $salon->role = 'ROLE_SALON';
-        $salon->status = 'ON';
+        $salon->status = 'active';
         $salon->ward_code = $request->input('ward');
         $salon->save();
         return $salon;
@@ -40,11 +40,11 @@ class SalonRepository
     }
 
     public function getAllSalonStatusOn() {
-        return Salon::query()->where('status', 'ON')->get();
+        return Salon::query()->where('status', 'active')->get();
     }
 
     public function getAllSalonStatusBlock() {
-        return Salon::query()->where('status', 'BLOCK')->get();
+        return Salon::query()->where('status', 'block')->get();
     }
 
     public function salonStatus($request) {

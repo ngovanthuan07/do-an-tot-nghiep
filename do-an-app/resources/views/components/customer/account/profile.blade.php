@@ -1,5 +1,5 @@
 @extends('layouts.customer')
-@section('title', 'Chi tiết salon')
+@section('title', 'Trang cá nhân')
 @push('pushLink')
     <link rel="stylesheet" href="{{asset('lib/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('lib/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css')}}"/>

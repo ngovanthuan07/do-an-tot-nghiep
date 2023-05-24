@@ -52,13 +52,14 @@ export function loadWordDate(workDate, salonId) {
     });
 }
 
-export function loadEmployeeWord(timeSlot,workDate, salonId) {
+export function loadEmployeeWord(timeSlot,workDate, salonId, lEmployee) {
     $.ajax({
         type: 'GET',
         url: `/lam-dep/${salonId}/dat-lich/nhan-vien-lam-viec?time_slot=${timeSlot}&date_working=${workDate}&salon_id=${salonId}`,
         success: function (resp) {
             if(resp?.success) {
                 if(resp.data.length > 0) {
+                    lEmployee.push(...resp.data);
                     let newHTML = resp.data.map(employee => {
                         return `
                             <div class="employee-item">
@@ -73,9 +74,11 @@ export function loadEmployeeWord(timeSlot,workDate, salonId) {
                     }).join('')
                     $('#lEmployee').html(newHTML)
                 } else {
+                    lEmployee = []
                     $('#lEmployee').html(emptyEmployee())
                 }
             } else {
+                lEmployee = []
                 Swal.fire({
                     icon: 'error',
                     title: 'Đã bị lỗi trong quá trình load dữ liệu',
@@ -84,6 +87,7 @@ export function loadEmployeeWord(timeSlot,workDate, salonId) {
             }
         },
         error: function (err) {
+            lEmployee = []
             Swal.fire({
                 icon: 'error',
                 title: 'Đã bị lỗi trong quá trình load dữ liệu',

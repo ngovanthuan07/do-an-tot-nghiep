@@ -1,5 +1,5 @@
 @extends('layouts.salon')
-@section('title', 'salon add')
+@section('title', 'Thêm dịch vụ')
 @section('content')
     <div id="contentApp">
         <div class="content-header">
@@ -211,7 +211,5 @@
                 }
             });
         })
-
-
     </script>
 @endpush

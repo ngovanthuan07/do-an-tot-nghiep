@@ -17,7 +17,7 @@ class EmployeeRepository
     {
         return Employee::query()
             ->where('salon_id', $salonId)
-            ->where('status', 'ON')
+            ->where('status', 'active')
             ->get();
     }
 
@@ -26,7 +26,7 @@ class EmployeeRepository
         return Employee::query()
             ->where('employee_id', $employeeId)
             ->where('salon_id', $salonId)
-            ->where('status', 'ON')
+            ->where('status', 'active')
             ->first();
     }
     public function create($request) {

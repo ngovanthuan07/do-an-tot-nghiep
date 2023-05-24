@@ -37,7 +37,8 @@
 
     <!-- toastr -->
     <link rel="stylesheet" type="text/css" href="{{asset('backend/plugins/toastr/toastr.css')}}"/>
-
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="{{ asset('lib/font-awesome/css/all.css') }}">
     @stack('pushLink')
 
     @stack('styles')

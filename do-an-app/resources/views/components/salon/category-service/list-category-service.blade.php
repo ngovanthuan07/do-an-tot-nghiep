@@ -1,17 +1,17 @@
 @extends('layouts.salon')
-@section('title', 'admin list salon')
+@section('title', 'Danh sách loại dịch vụ')
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Danh sách tài loại dịch vụ</h1>
+                    <h1>Danh sách loại dịch vụ</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Loại dịch vụ</a></li>
-                        <li class="breadcrumb-item active">Danh sách loại dịch vụ</li>
+                        <li class="breadcrumb-item active">Danh loại sách dịch vụ</li>
                     </ol>
                 </div>
             </div>
@@ -111,7 +111,7 @@
             type: 'POST',
             data: {
                 'cse_id': deleteId,
-                'status': 'OFF'
+                'status': 'inactive'
             },
             success: function (response) {
                 console.log(response)

@@ -1,5 +1,5 @@
 @extends('layouts.salon')
-@section('title', 'salon add')
+@section('title', 'Thêm loại dịch vụ')
 @section('content')
     <div id="contentApp">
         <div class="content-header">

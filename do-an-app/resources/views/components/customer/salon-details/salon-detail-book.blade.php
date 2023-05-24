@@ -1,5 +1,5 @@
 @extends('layouts.customer')
-@section('title', 'Chi tiết salon')
+@section('title', 'Đặt lịch')
 @push('pushLink')
     <link rel="stylesheet" href="{{asset('lib/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/load/a-ball-pulse-sync.css')}}">
@@ -77,6 +77,7 @@
         let mServices = [];
         let storageLocal = handleLocalStorage(LOCAL_NAME) ?? null;
         let mDate = '';
+        let lEmployee = [];
         let mTimeSlot = '';
         let mEmployee = null;
         let isCheckLocalStorage = true;
@@ -167,7 +168,8 @@
             $(this).addClass('active');
             mTimeSlot = $(this).text()
             if(mDate) {
-                loadEmployeeWord(mTimeSlot, mDate, salonID);
+                lEmployee = [];
+                loadEmployeeWord(mTimeSlot, mDate, salonID, lEmployee);
             } else {
                 Swal.fire({
                     icon: 'warning',
@@ -232,11 +234,19 @@
                 return;
             }
             if(!mEmployee) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Vui lòng chọn nhân viên',
-                })
-                return;
+                if(lEmployee.length === 0) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Khung giờ không có nhân viên nào',
+                    })
+                    return;
+                }
+                if (lEmployee.length === 1) {
+                    mEmployee = lEmployee[0].employee_id;
+                } else {
+                    let randomIndex = Math.floor(Math.random() * lEmployee.length);
+                    mEmployee = lEmployee[randomIndex].employee_id;
+                }
             }
             $.ajax({
                 url: '{{route('customer.salon-page.book.sessionPayment', $salon->salon_id)}}',
@@ -254,12 +264,22 @@
                     }
                 },
                 error: function (error) {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Lỗi',
-                        text: 'Lỗi hệ thống',
-                        confirmButtonColor: "#fdc63c",
-                    })
+                    let message = error?.responseJSON?.message;
+                    if(message) {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Lưu ý',
+                            text: message,
+                            confirmButtonColor: "#fdc63c",
+                        })
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Lỗi',
+                            text: 'Lỗi hệ thống',
+                            confirmButtonColor: "#fdc63c",
+                        })
+                    }
                 },
             });
         })
