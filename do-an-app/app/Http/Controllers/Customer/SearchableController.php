@@ -46,6 +46,7 @@ class SearchableController extends Controller
         $districtName = $request['district'] ?? null;
         $wardName = $request['ward'] ?? null;
         $starRating = $request['star'] ?? 0;
+        
 
         $salons = DB::select('CALL CustomerSearchableSalon(:salonName, :serviceName, :provinceName, :districtName, :wardName, :starRating)', [
             'salonName' => $salonName,
@@ -56,6 +57,7 @@ class SearchableController extends Controller
             'starRating' => $starRating
         ]);
 
+
         if($salons) {
             foreach ($salons as $salon) {
                 $salon->location = $this->locationRepository
@@ -64,6 +66,7 @@ class SearchableController extends Controller
                 $salon->star = $resultStar[0]->average_stars ?? 0;
             }
         }
+
 
         return $salons;
     }

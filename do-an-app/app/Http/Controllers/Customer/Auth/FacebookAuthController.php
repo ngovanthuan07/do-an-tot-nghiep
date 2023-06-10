@@ -8,24 +8,24 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-class GoogleAuthController extends Controller
+class FacebookAuthController extends Controller
 {
     public function redirectToProvider()
     {
-        return Socialite::driver('google')->stateless()->redirect()->getTargetUrl();
+        return Socialite::driver('facebook')->stateless()->redirect()->getTargetUrl();
     }
 
     public function handleProviderCallback()
     {
         try {
-            $user = Socialite::driver('google')->stateless()->user();
+            $user = Socialite::driver('facebook')->stateless()->user();
         } catch (\Exception $e) {
             return view('auth.alert.error');
         }
         // check if they're an existing user
         $existingUser = Customer::query()
             ->where('email', $user->email)
-            ->where('type_login', Customer::$GOOGLE)
+            ->where('type_login', Customer::$FACEBOOK)
             ->first();
         if($existingUser){
             Auth::guard('customer')->login($existingUser);
@@ -40,13 +40,12 @@ class GoogleAuthController extends Controller
             $newCustomer->email           = $user->email;
             $newCustomer->token           = $user->token;
             $newCustomer->image           = $user->avatar;
-            $newCustomer->type_login      = Customer::$GOOGLE;
-
+            $newCustomer->type_login      = Customer::$FACEBOOK;
             $newCustomer->save();
             Auth::guard('customer')
                 ->login(Customer::query()
                     ->where('email', $user->email)
-                    ->where('type_login', Customer::$GOOGLE)
+                    ->where('type_login', Customer::$FACEBOOK)
                     ->first());
         }
         return view('auth.alert.success');

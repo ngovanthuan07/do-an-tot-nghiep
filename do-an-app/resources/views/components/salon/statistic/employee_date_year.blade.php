@@ -122,7 +122,8 @@
                 },
                 "searching": false,  // Hide the search box
                 "info": false,  // Hide the information about the number of entries
-                "paging": false  // Hide the pagination
+                "paging": false,  // Hide the pagination,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         }
         initDataTable()

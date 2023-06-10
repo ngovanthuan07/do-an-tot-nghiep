@@ -11,6 +11,9 @@ class Customer extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public static $FACEBOOK = 'facebook';
+    public static $GOOGLE = 'google';
+
     const CUSTOMER_ROLE= 'CUSTOMER_ROLE';
 
     protected $table = 'customer';

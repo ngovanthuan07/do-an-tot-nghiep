@@ -190,6 +190,30 @@
                         </li>
                     </ul>
                 </li>
+                {{-- Thống kê --}}
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link {{request()->is('salon/statistic*') ? 'active' : ''}}">
+                        <i class="fa-solid fas fa-chart-area"></i>
+                        <p>
+                            Thống kê
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('salon.statistic.all')}}" class="nav-link {{request()->is('salon/statistic/thong-ke-tat-ca') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thống kê tất cả</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('salon.statistic.top_nhan_vien')}}" class="nav-link {{request()->is('salon/statistic/top_nhan_vien') ? 'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thống kê nhân viên</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 {{-- Profile --}}
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link {{request()->is('salon/profile*') ? 'active' : ''}}">

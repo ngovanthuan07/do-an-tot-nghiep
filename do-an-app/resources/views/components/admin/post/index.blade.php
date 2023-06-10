@@ -33,7 +33,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID BÀI VIẾT</th>
-                                        <th>TIÊU ĐỀ</th>
+                                        <th style="width: 30%">TIÊU ĐỀ</th>
                                         <th>HÌNH ẢNH</th>
                                         <th>NGÀY ĐĂNG</th>
                                         <th>Chức năng</th>
@@ -99,7 +99,7 @@
                     }
                 }
             ],
-
+            "order": [[4, "desc"]],
             "processing": true,
             "responsive": true,
             "lengthChange": false,

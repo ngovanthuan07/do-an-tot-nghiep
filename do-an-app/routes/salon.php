@@ -142,9 +142,12 @@ Route::middleware(['salon.auth'])->prefix('salon')->group(function () {
     });
 
     Route::prefix('statistic')->group(function () {
+        Route::get('/thong-ke-tat-ca', [StatisticalController::class, 'all'])->name('salon.statistic.all');
+        Route::get('/getRevenueAndBookByMonth', [StatisticalController::class, 'getRevenueAndBookByMonth'])->name('salon.statistic.getRevenueAndBookByMonth');
+        Route::get('/getEmployeeBookByMonthAndYear', [StatisticalController::class, 'topEmployeeMonthAndYear'])->name('salon.statistic.getEmployeeBookByMonthAndYear');
+
         Route::get('/top_nhan_vien', [StatisticalController::class, 'top_nhan_vien'])->name('salon.statistic.top_nhan_vien');
         Route::get('/top_nhan_vien_api', [StatisticalController::class, 'top_nhan_vien_api'])->name('salon.statistic.top_nhan_vien_api');
-
     });
 
     Route::get('/logout', [AuthSalonController::class, 'logout'])->name('salon.logout');

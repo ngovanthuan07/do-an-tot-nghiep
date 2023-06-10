@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Salon Login</title>
 
+    <link rel="icon" type="image/png" size="32x32" href="{{asset('media/logo/salon_icon_x32.png')}}">
+    <link rel="icon" type="image/png" size="16x16" href="{{asset('media/logo/salon_icon_x16.png')}}">
+
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -71,12 +75,12 @@
 
 
 
-            <p class="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
-            </p>
-            <p class="mb-0">
-                <a href="register.html" class="text-center">Register a new membership</a>
-            </p>
+{{--            <p class="mb-1">--}}
+{{--                <a href="forgot-password.html">I forgot my password</a>--}}
+{{--            </p>--}}
+{{--            <p class="mb-0">--}}
+{{--                <a href="register.html" class="text-center">Register a new membership</a>--}}
+{{--            </p>--}}
         </div>
         <!-- /.login-card-body -->
     </div>

@@ -148,7 +148,7 @@
                                                 class="fa fa-backward mr-1"></i>
                                             Quay về
                                         </a>
-                                        <button type="submit" class="btn btn-primary" id="saveBtn"><i class="fa fa-save mr-1">Lưu</i>
+                                        <button type="submit" class="btn btn-primary" id="saveBtn"><i class="fa fa-save mr-1"></i> Lưu
                                         </button>
                                     </div>
                                 </div>

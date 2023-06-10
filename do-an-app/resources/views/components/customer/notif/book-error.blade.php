@@ -24,11 +24,10 @@
     <script type="module" src="{{asset('js/customer/salon-detail/handleLoadHTML.js')}}"></script>
     <script type="module">
         Swal.fire({
-            icon: "success",
-            title: "Đặt lịch thành công",
-            text: "Đăng nhập thành công!",
+            icon: "error",
+            title: "Đặt lịch thất bại",
+            text: "Đăng nhập thất bại!",
             allowOutsideClick: false
-
         })
     </script>
 @endpush

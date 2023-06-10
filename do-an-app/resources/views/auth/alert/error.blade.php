@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Lỗi đăng nhập</title>
+    <link rel="icon" type="image/png" size="32x32" href="{{asset('media/logo/salon_icon_x32.png')}}">
+    <link rel="icon" type="image/png" size="16x16" href="{{asset('media/logo/salon_icon_x16.png')}}">
+
     <link
         rel="stylesheet"
         href="{{asset('lib/bootstrap-4.0.0/dist/css/bootstrap.min.css')}}"
@@ -26,19 +29,17 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    window.close();
 
-    Swal.fire({
-        icon: "Error",
-        title: "Lỗi đăng nhập",
-        text: "Đã bị lỗi vui lòng đăng nhập lại!",
-        confirmButtonColor: "#3085d6",
-        confirmButtonText: "Đóng",
-        allowOutsideClick: false,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.close();
-        }
-    });
+    // Swal.fire({
+    //     icon: "Error",
+    //     title: "Lỗi đăng nhập",
+    //     text: "Đã bị lỗi vui lòng đăng nhập lại!",
+    //     confirmButtonColor: "#3085d6",
+    //     confirmButtonText: "",
+    //     showConfirmButton: false,
+    //     allowOutsideClick: false,
+    // })
 </script>
 </body>
 </html>

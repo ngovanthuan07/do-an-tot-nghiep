@@ -188,14 +188,14 @@
                        <div class="col-lg-12">
                            <div class="team-slider-recent owl-carousel mb-3">
                                @foreach($posts as $post)
-                                   <div class="single-box">
+                                   <div class="single-box" style="height: 250px">
                                        <div class="img-area">
                                            <a href="{{route('customer.my-post', $post->post_id)}}">
                                                <img
                                                    style="
-                        height: 200px;
-                        object-fit: cover;
-                      "
+                                                        height: 200px;
+                                                        object-fit: cover;
+                                                      "
                                                    src="{{asset('media/post/' . $post->image)}}"
                                                    class="img-fluid move-animation"
                                                    alt=""

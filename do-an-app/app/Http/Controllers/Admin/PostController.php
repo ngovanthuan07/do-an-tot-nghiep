@@ -14,7 +14,9 @@ class PostController extends Controller
         return view('components.admin.post.index');
     }
     public function listPostApi() {
-        return Post::all();
+        return Post::query()
+            ->orderBy('post_id', 'desc')
+            ->get();
     }
     public function showAdd()
     {

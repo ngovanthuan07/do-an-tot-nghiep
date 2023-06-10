@@ -142,7 +142,7 @@
                     `
                     })
 
-                    optionDistricts.unshift(`<option value="0" selected>CHỌN QUẬN HUYỆN</option>`)
+                    optionDistricts.unshift(`<option value="" selected>CHỌN QUẬN HUYỆN</option>`)
 
                     // selectCity
                     $('#district').html(optionDistricts.join(''))
@@ -165,7 +165,7 @@
                 `
                     })
 
-                    optionWards.unshift(`<option value="0" selected>CHỌN QUẬN HUYỆN</option>`)
+                    optionWards.unshift(`<option value="" selected>CHỌN QUẬN HUYỆN</option>`)
 
                     // selectCity
                     $('#ward').html(optionWards.join(''))

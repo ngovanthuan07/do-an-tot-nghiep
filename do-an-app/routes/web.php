@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Customer\AccountController;
 use App\Http\Controllers\Customer\AppointmentController;
+use App\Http\Controllers\Customer\Auth\FacebookAuthController;
 use App\Http\Controllers\Customer\Auth\GoogleAuthController;
 use App\Http\Controllers\Customer\Auth\LoginController;
 use App\Http\Controllers\Customer\CommentController;
@@ -26,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//\Debugbar::disable();
+\Debugbar::disable();
 
 Route::get('provinces/getAll', [LocationController::class, 'getAllProvince'])->name('provinces.getAll');
 Route::get('provinces/getByCode/{code}', [LocationController::class, 'getProvinceByCode'])->name('provinces.getByCode');
@@ -49,6 +50,10 @@ Route::get('/lam-dep/get-service-by-salon-id', [SalonDetailController::class, 'g
 Route::get('/dang-nhap', [LoginController::class, 'login'])->name('dang-nhap');
 Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirectToProvider'])->name('google.redirect');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'handleProviderCallback'])->name('google.callback');
+Route::get('/auth/facebook/redirect', [FacebookAuthController::class, 'redirectToProvider'])->name('facebook.redirect');
+Route::get('/auth/facebook/callback', [FacebookAuthController::class, 'handleProviderCallback'])->name('facebook.callback');
+
+
 // search
 Route::get('/lam-dep', [SearchableController::class, 'index'])->name('customer.salon.search_view');
 Route::get('/lam-dep/searchable', [SearchableController::class, 'searchable'])->name('customer.salon.searchable');

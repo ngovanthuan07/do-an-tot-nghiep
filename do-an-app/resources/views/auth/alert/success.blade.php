@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Đăng nhập thành công</title>
+    <link rel="icon" type="image/png" size="32x32" href="{{asset('media/logo/salon_icon_x32.png')}}">
+    <link rel="icon" type="image/png" size="16x16" href="{{asset('media/logo/salon_icon_x16.png')}}">
+
     <link
         rel="stylesheet"
         href="{{asset('lib/bootstrap-4.0.0/dist/css/bootstrap.min.css')}}"
@@ -27,16 +30,16 @@
         }
     });
 
-    Swal.fire({
-        icon: "success",
-        title: "Thành công",
-        text: "Đăng nhập thành công!",
-        allowOutsideClick: false,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.close();
-        }
-    });
+    window.close();
+
+    // Swal.fire({
+    //     icon: "success",
+    //     title: "Thành công",
+    //     text: "Đăng nhập thành công!",
+    //     showConfirmButton: false,
+    //     allowOutsideClick: false,
+    // })
+
 </script>
 </body>
 </html>
