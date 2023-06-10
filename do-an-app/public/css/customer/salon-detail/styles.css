@@ -127,7 +127,10 @@
 
 .service-item img{
     width: 100%;
-    height: auto;
+    /*height: auto;*/
+    height: 186px;
+    object-fit: cover;
+    background-color: aliceblue;
 }
 .service-item .service-name, .service-price{
     width: 100%;
