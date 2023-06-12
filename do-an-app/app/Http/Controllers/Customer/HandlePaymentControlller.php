@@ -9,6 +9,7 @@ use App\Models\PaymentService;
 use App\Repositories\AppointmentRepository;
 use App\Repositories\PaymentServiceRepository;
 use App\Repositories\ServiceDetailRepository;
+use App\Util\CheckAppointmentCustomer;
 use App\Util\CheckUserCompleteAppointmentUtil;
 use App\Util\SendMailUtil;
 use Illuminate\Http\Request;
@@ -33,12 +34,19 @@ class HandlePaymentControlller extends Controller
 
     public function link_redirect(Request $request) {
         $book = session('BOOK');
-//        if(CheckUserCompleteAppointmentUtil::isCheck($book['salon_id'], Appointment::$SCHEDULED)) {
-//            session(['BOOK' => null]);
+
+        if(CheckAppointmentCustomer::isCheck($book)) {
+            return response()->json([
+                'message' => 'Bạn đã trùng cuộc hẹn',
+            ], 401);
+        }
+
+//        if(CheckAppointmentCustomer::isCheckAppointment() < 10) {
 //            return response()->json([
-//                'message' => 'Bạn đã có cuộc hẹn với salon chúng tôi trước đó vui lòng hoàn tất cuộc hẹn trước khi thực hiện một cuộc hẹn mới',
+//                'message' => 'Bạn đã đặt lịch quá giới hạn',
 //            ], 401);
 //        }
+
         return response()->json([
             'success' => true
         ]);

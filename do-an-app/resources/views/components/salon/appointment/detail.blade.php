@@ -83,6 +83,9 @@
                 @if(in_array($appointment->status, [\App\Models\Appointment::$CONFIRMED]))
                     <div class="d-flex justify-content-around mb-4">
                         <a href="{{route("salon.appointment.lConfirmed")}}" class="btn btn-primary">Quay trở lại</a>
+                        @if(\App\Util\cancelAppointment::check($appointment->appointment_hour, $appointment->appointment_date))
+                            <button class="btn btn-danger btnConfirm" data-appointment-status="cancel">Hủy lịch hẹn</button>
+                        @endif
                         <button class="btn btn-info btnConfirm" data-appointment-status="completed">Đã hoàn tất</button>
                     </div>
                 @endif

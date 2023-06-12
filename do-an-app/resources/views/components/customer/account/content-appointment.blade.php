@@ -71,6 +71,11 @@
                                             </li>
 
                                             <li><span><i class="fa fa-money" aria-hidden="true"></i></span>{{$data->payment->total}} VNĐ</li>
+                                            @if(\App\Util\cancelAppointment::check($data->appointment_hour, $data->appointment_date))
+                                                <div class="">
+                                                    <a href="{{route('customer.appointment.cancel', $data->appointment_id)}}" class="btn btn-warning text-center text-white">Hủy cuộc hẹn</a>
+                                                </div>
+                                            @endif
                                         </ul>
                                     </div>
                                 </div>
